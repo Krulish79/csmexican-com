@@ -1,0 +1,23 @@
+# robots.txt — CSM
+# Domain pending Adriana: update the Sitemap URL once the final domain is live.
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Block AI training crawlers (optional — remove if Adriana wants to allow)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://csmexican.com/sitemap.xml
