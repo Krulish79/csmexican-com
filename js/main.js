@@ -34,6 +34,62 @@
     });
   }
 
+  // ---------- Slideshows (cross-fade between images) ----------
+  // Markup: <div class="slideshow" data-slideshow data-interval="6000">
+  //           <img class="slide is-active" ...>
+  //           <img class="slide" ...> ...
+  //         </div>
+  // - Each slideshow auto-advances on its own data-interval (ms)
+  // - Slideshows pause when scrolled off-screen (saves CPU + battery)
+  // - Respects prefers-reduced-motion (single static slide)
+  const prefersReducedMotion =
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('[data-slideshow]').forEach((show) => {
+    const slides = show.querySelectorAll('.slide');
+    if (slides.length < 2 || prefersReducedMotion) return;
+
+    const interval = parseInt(show.dataset.interval, 10) || 6000;
+    let idx = 0;
+    let timer = null;
+
+    const advance = () => {
+      slides[idx].classList.remove('is-active');
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add('is-active');
+    };
+    const start = () => {
+      if (timer) return;
+      timer = setInterval(advance, interval);
+    };
+    const stop = () => {
+      clearInterval(timer);
+      timer = null;
+    };
+
+    // Only run while the slideshow is on-screen
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) start();
+            else stop();
+          });
+        },
+        { threshold: 0.15 }
+      );
+      io.observe(show);
+    } else {
+      start();
+    }
+
+    // Pause when the tab is hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else if (show.getBoundingClientRect().top < window.innerHeight) start();
+    });
+  });
+
   // ---------- Scroll-triggered fade-in for sections ----------
   const targets = document.querySelectorAll('.section, .hero-inner');
   targets.forEach((el) => el.classList.add('fade-in'));

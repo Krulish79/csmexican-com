@@ -114,6 +114,7 @@ p:last-child { margin-bottom: 0; }
   background: var(--cream-deep);
   border-radius: var(--radius);
   position: relative;
+  overflow: hidden;
 }
 .image-frame::after {
   content: attr(data-needs-photo);
@@ -125,8 +126,26 @@ p:last-child { margin-bottom: 0; }
   border-radius: var(--radius);
   pointer-events: none;
 }
+/* Hide the dashed placeholder when a slideshow is wired up */
+.image-frame.slideshow::after { content: none; }
+
 .two-col .col.image .image-frame { aspect-ratio: 4 / 5; }
 .section-products .image-frame { aspect-ratio: 4 / 5; }
+
+/* -------------------- Slideshow (cross-fade) -------------------- */
+.slideshow { position: relative; overflow: hidden; }
+.slideshow .slide {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.6s ease-in-out;
+  will-change: opacity;
+}
+.slideshow .slide.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .slideshow .slide { transition: none; }
+}
 
 /* -------------------- Buttons -------------------- */
 .btn {
@@ -252,6 +271,7 @@ p:last-child { margin-bottom: 0; }
 .hero-bg {
   position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+  overflow: hidden;
 }
 .hero-bg::after {
   content: attr(data-needs-photo);
@@ -260,6 +280,23 @@ p:last-child { margin-bottom: 0; }
   color: var(--muted);
   background: rgba(255,255,255,0.6);
   padding: 0.35rem 0.5rem; border-radius: var(--radius);
+}
+/* When the hero has a slideshow, kill the placeholder label and add a
+   cream wash so the forest-green hero type stays legible against photos.
+   3-stop gradient: lighter at edges, heavier in the middle where text sits */
+.hero-bg.slideshow::after { content: none; }
+.hero-bg.slideshow::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 239, 227, 0.82) 0%,
+    rgba(244, 239, 227, 0.92) 45%,
+    rgba(244, 239, 227, 0.92) 70%,
+    rgba(244, 239, 227, 0.84) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 .hero-inner {
   position: relative; max-width: 56rem;
