@@ -52,7 +52,7 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--forest); text-decoration: none; }
-a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: var(--ochre); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ochre); }
 button { font: inherit; cursor: pointer; }
 ul, ol { padding: 0; margin: 0; list-style: none; }
 h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 500; letter-spacing: -0.005em; }
@@ -94,7 +94,7 @@ p:last-child { margin-bottom: 0; }
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ochre);  /* brand accent */
   margin: 0 0 0.9rem;
 }
 @media (max-width: 30rem) {
@@ -268,7 +268,7 @@ p:last-child { margin-bottom: 0; }
 .site-nav .nav-list a:hover { color: var(--forest); text-decoration: none; }
 
 .site-nav .nav-cta {
-  padding: 0.5rem 1.8rem;
+  padding: 0.5rem 2.6rem;
   background: var(--forest);
   border: 1px solid var(--forest);
   border-radius: var(--radius);
@@ -295,7 +295,7 @@ p:last-child { margin-bottom: 0; }
     min-width: 0;
   }
   .site-nav .nav-list a { padding: 0; display: inline; }
-  .site-nav .nav-cta { padding: 0.55rem 2rem; margin-top: 0; }
+  .site-nav .nav-cta { padding: 0.55rem 2.8rem; margin-top: 0; }
 }
 
 /* -------------------- Hero -------------------- */
@@ -408,7 +408,7 @@ p:last-child { margin-bottom: 0; }
 .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px -18px rgba(31, 77, 58, 0.35); }
 .card-num {
   font-family: var(--font-display);
-  font-size: 0.78rem; letter-spacing: 0.18em; color: var(--muted);
+  font-size: 0.78rem; letter-spacing: 0.18em; color: var(--ochre);
   margin-bottom: 0.85rem;
 }
 .card h3 { font-size: 1.15rem; margin: 0 0 0.55rem; color: var(--forest); line-height: 1.25; }
@@ -436,7 +436,7 @@ p:last-child { margin-bottom: 0; }
   align-self: start;
   font-family: var(--font-display);
   font-size: 1.6rem; font-weight: 500;
-  color: var(--forest); opacity: 0.4;
+  color: var(--ochre); opacity: 1;
 }
 .process-steps h3 { grid-area: title; font-size: 1.2rem; color: var(--ink); margin: 0; }
 .process-steps p  { grid-area: desc; font-size: 1rem; color: var(--ink); opacity: 0.78; margin: 0; }
@@ -452,7 +452,7 @@ p:last-child { margin-bottom: 0; }
 }
 .bullets li::before {
   content: ""; position: absolute; left: 0; top: 0.7em;
-  width: 0.55rem; height: 1px; background: var(--forest);
+  width: 0.55rem; height: 2px; background: var(--ochre);
 }
 
 /* -------------------- Why Mexico -------------------- */
@@ -507,7 +507,7 @@ p:last-child { margin-bottom: 0; }
 .clients-lead {
   font-family: var(--font-display);
   font-size: 0.85rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--muted);
+  text-transform: uppercase; color: var(--ochre);
   margin: 0 0 1.5rem;
 }
 /* Typographic client list — written-out brand names, no logos */
@@ -532,8 +532,8 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   right: 0; top: 50%;
   transform: translateY(-55%);
-  color: var(--muted);
-  font-weight: 400;
+  color: var(--ochre);
+  font-weight: 500;
 }
 @media (min-width: 56rem) {
   .client-names { gap: 0.75rem 1.8rem; }
