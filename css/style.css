@@ -306,15 +306,15 @@ p:last-child { margin-bottom: 0; }
 .hero-logo {
   display: block;
   width: auto;
-  height: clamp(6rem, 14vw, 10rem);
-  margin: 0 0 1.75rem;
-  margin-left: -1.25rem;  /* offset the SVG's internal left padding */
+  height: clamp(3.6rem, 8.4vw, 6rem);
+  margin: 0 0 1.25rem;
+  margin-left: -0.75rem;  /* offset the SVG's internal left padding */
 }
 @media (max-width: 36rem) {
   .hero-logo {
-    height: clamp(4.5rem, 26vw, 7rem);
-    margin-bottom: 1.25rem;
-    margin-left: -0.75rem;
+    height: clamp(2.7rem, 15.6vw, 4.2rem);
+    margin-bottom: 1rem;
+    margin-left: -0.45rem;
   }
 }
 .hero-title {

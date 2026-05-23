@@ -41,13 +41,13 @@
   //         </div>
   // - Each slideshow auto-advances on its own data-interval (ms)
   // - Slideshows pause when scrolled off-screen (saves CPU + battery)
-  // - Respects prefers-reduced-motion (single static slide)
-  const prefersReducedMotion =
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+  // - prefers-reduced-motion: the CSS strips the fade transition so slides
+  //   swap instantly instead of cross-fading — content still rotates,
+  //   it just doesn't animate. (Killing rotation entirely felt too strict;
+  //   plain content updates are accessible-friendly.)
   document.querySelectorAll('[data-slideshow]').forEach((show) => {
     const slides = show.querySelectorAll('.slide');
-    if (slides.length < 2 || prefersReducedMotion) return;
+    if (slides.length < 2) return;
 
     const interval = parseInt(show.dataset.interval, 10) || 6000;
     let idx = 0;
