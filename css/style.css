@@ -182,7 +182,7 @@ p:last-child { margin-bottom: 0; }
   min-height: 4.25rem;
   gap: 1rem;
 }
-.logo { display: inline-flex; align-items: center; gap: 0.85rem; flex-shrink: 0; }
+.logo { display: inline-flex; align-items: center; gap: 1.5rem; flex-shrink: 0; }
 .logo img { height: 1.95rem; width: auto; max-width: 11rem; }
 .logo-tagline {
   display: none;  /* hidden on mobile */
@@ -191,7 +191,7 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
-  padding-left: 0.85rem;
+  padding-left: 1.1rem;
   border-left: 1px solid rgba(31, 77, 58, 0.18);
   line-height: 1.35;
   max-width: 9rem;
@@ -299,9 +299,9 @@ p:last-child { margin-bottom: 0; }
   background: rgba(255,255,255,0.6);
   padding: 0.35rem 0.5rem; border-radius: var(--radius);
 }
-/* When the hero has a photo, kill the placeholder label and add a
-   cream wash so the forest-green hero type stays legible against the
-   photo. 3-stop gradient: lighter at edges, heavier in the middle. */
+/* When the hero has a photo, kill the placeholder label and lay a
+   cream wash at 75% opacity over it — only 25% of the photo color
+   comes through, keeping the forest-green hero type fully legible. */
 .hero-bg.has-photo::after { content: none; }
 .hero-bg .hero-photo {
   position: absolute; inset: 0;
@@ -311,13 +311,7 @@ p:last-child { margin-bottom: 0; }
 .hero-bg.has-photo::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(244, 239, 227, 0.82) 0%,
-    rgba(244, 239, 227, 0.92) 45%,
-    rgba(244, 239, 227, 0.92) 70%,
-    rgba(244, 239, 227, 0.84) 100%
-  );
+  background: rgba(244, 239, 227, 0.75);
   z-index: 1;
   pointer-events: none;
 }
