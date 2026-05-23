@@ -183,8 +183,8 @@ p:last-child { margin-bottom: 0; }
   gap: 1rem;
 }
 .logo { display: inline-flex; align-items: center; flex-shrink: 0; }
-.logo img { height: 1.75rem; width: auto; max-width: 11rem; }
-@media (min-width: 56rem) { .logo img { height: 2.35rem; max-width: none; } }
+.logo img { height: 1.95rem; width: auto; max-width: 11rem; }
+@media (min-width: 56rem) { .logo img { height: 2.6rem; max-width: none; } }
 
 /* ----- Base nav (mobile-first) ----- */
 .site-nav { position: relative; }
@@ -233,11 +233,13 @@ p:last-child { margin-bottom: 0; }
 .site-nav .nav-list a:hover { color: var(--forest); text-decoration: none; }
 
 .site-nav .nav-cta {
-  padding: 0.55rem 0.85rem;
-  border: 1px solid var(--forest);
+  padding: 0.65rem 1.5rem;
+  background: var(--cream-deep);
+  border: 1px solid transparent;
   border-radius: var(--radius);
   color: var(--forest) !important;
   margin-top: 0.25rem;
+  transition: background 180ms ease, color 180ms ease;
 }
 .site-nav .nav-cta:hover { background: var(--forest); color: var(--cream) !important; }
 
@@ -258,7 +260,7 @@ p:last-child { margin-bottom: 0; }
     min-width: 0;
   }
   .site-nav .nav-list a { padding: 0; display: inline; }
-  .site-nav .nav-cta { padding: 0.55rem 1rem; margin-top: 0; }
+  .site-nav .nav-cta { padding: 0.7rem 1.75rem; margin-top: 0; }
 }
 
 /* -------------------- Hero -------------------- */
@@ -300,6 +302,20 @@ p:last-child { margin-bottom: 0; }
 }
 .hero-inner {
   position: relative; max-width: 56rem;
+}
+.hero-logo {
+  display: block;
+  width: auto;
+  height: clamp(6rem, 14vw, 10rem);
+  margin: 0 0 1.75rem;
+  margin-left: -1.25rem;  /* offset the SVG's internal left padding */
+}
+@media (max-width: 36rem) {
+  .hero-logo {
+    height: clamp(4.5rem, 26vw, 7rem);
+    margin-bottom: 1.25rem;
+    margin-left: -0.75rem;
+  }
 }
 .hero-title {
   font-size: clamp(1.85rem, 6vw, 4.6rem);
@@ -563,7 +579,7 @@ p:last-child { margin-bottom: 0; }
     gap: 3rem;
   }
 }
-.footer-logo img { height: 2.25rem; width: auto; }
+.footer-logo img { height: 2.5rem; width: auto; }
 .footer-nav ul { display: grid; gap: 0.6rem; grid-template-columns: 1fr 1fr; }
 .footer-nav a { color: var(--cream); opacity: 0.85; font-size: 0.95rem; }
 .footer-nav a:hover { opacity: 1; text-decoration: underline; }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- CSM wordmark — tight viewBox, forest green -->
+<!-- CSM wordmark — tight viewBox, cream (white) for dark backgrounds -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="65 5 385 155">
   <defs>
     <style>
-      .csm-fill { fill: #1f4d3a; }
+      .csm-fill { fill: #ffffff; }
       .csm-text {
         font-family: FuturaLT, 'Futura LT Medium', 'Futura', Arial, sans-serif;
         font-size: 178.82px;
