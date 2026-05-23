@@ -12,12 +12,17 @@
 :root {
   --forest:       #1F4D3A;
   --forest-deep:  #143828;
-  --cream:        #F4EFE3;
-  --cream-deep:   #ECE5D2;
+  --paper:        #FAF6EC;  /* Paper White — page background (was Cream) */
+  --paper-deep:   #F2EDDE;  /* slightly tinted accent for visual rhythm */
+  --ochre:        #B78700;  /* brand accent */
   --ink:          #1A1A1A;
   --muted:        #8C8C8C;
   --soft:         #D9D9D9;
   --white:        #FFFFFF;
+
+  /* Legacy aliases — keep so existing rules still work */
+  --cream:        var(--paper);
+  --cream-deep:   var(--paper-deep);
 
   --font-display: 'Jost', 'Futura LT Medium', system-ui, sans-serif;
   --font-body:    'Jost', 'Century Gothic', system-ui, sans-serif;
@@ -186,7 +191,7 @@ p:last-child { margin-bottom: 0; }
 /* -------------------- Header -------------------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(244, 239, 227, 0.92);
+  background: rgba(250, 246, 236, 0.92);
   backdrop-filter: saturate(160%) blur(8px);
   border-bottom: var(--rule);
 }
@@ -326,7 +331,7 @@ p:last-child { margin-bottom: 0; }
 .hero-bg.has-photo::before {
   content: '';
   position: absolute; inset: 0;
-  background: rgba(244, 239, 227, 0.75);
+  background: rgba(250, 246, 236, 0.75);
   z-index: 1;
   pointer-events: none;
 }
@@ -623,7 +628,7 @@ p:last-child { margin-bottom: 0; }
 .footer-contact a { color: var(--cream); }
 .footer-copy {
   grid-column: 1 / -1;
-  border-top: 1px solid rgba(244, 239, 227, 0.18);
+  border-top: 1px solid rgba(250, 246, 236, 0.18);
   padding-top: 1.5rem; margin-top: 1.5rem;
   font-size: 0.8rem; opacity: 0.7;
 }
