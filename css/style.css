@@ -187,14 +187,14 @@ p:last-child { margin-bottom: 0; }
 .logo-tagline {
   display: none;  /* hidden on mobile */
   font-family: var(--font-body);
-  font-size: 0.62rem;
+  font-size: 0.745rem;  /* +20% from 0.62rem */
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
-  padding-left: 1.1rem;
+  padding-left: 1.2rem;
   border-left: 1px solid rgba(31, 77, 58, 0.18);
   line-height: 1.35;
-  max-width: 9rem;
+  max-width: 11rem;
   white-space: normal;
 }
 @media (min-width: 56rem) {
@@ -400,20 +400,26 @@ p:last-child { margin-bottom: 0; }
 }
 .process-steps > li {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 3.5rem 1fr;
+  grid-template-areas:
+    "num title"
+    "num desc";
   column-gap: 1.5rem;
+  row-gap: 0.3rem;
   align-items: baseline;
   border-top: var(--rule);
   padding: 1.5rem 0 0.5rem;
 }
 .process-steps > li:first-child { border-top: 0; padding-top: 0.5rem; }
 .step-num {
+  grid-area: num;
+  align-self: start;
   font-family: var(--font-display);
   font-size: 1.6rem; font-weight: 500;
   color: var(--forest); opacity: 0.4;
 }
-.process-steps h3 { font-size: 1.2rem; color: var(--ink); margin: 0 0 0.3rem; }
-.process-steps p  { font-size: 1rem; color: var(--ink); opacity: 0.78; margin: 0; }
+.process-steps h3 { grid-area: title; font-size: 1.2rem; color: var(--ink); margin: 0; }
+.process-steps p  { grid-area: desc; font-size: 1rem; color: var(--ink); opacity: 0.78; margin: 0; }
 
 /* -------------------- Products -------------------- */
 .bullets {
