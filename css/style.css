@@ -268,15 +268,15 @@ p:last-child { margin-bottom: 0; }
 .site-nav .nav-list a:hover { color: var(--forest); text-decoration: none; }
 
 .site-nav .nav-cta {
-  padding: 0.5rem 2.6rem;
-  background: var(--forest);
-  border: 1px solid var(--forest);
-  border-radius: var(--radius);
-  color: var(--cream) !important;
+  padding: 0.55rem 0;
+  background: transparent;
+  border: 0;
+  color: var(--ochre) !important;
+  font-weight: 500;
   margin-top: 0.25rem;
-  transition: background 180ms ease, color 180ms ease;
+  transition: color 180ms ease;
 }
-.site-nav .nav-cta:hover { background: var(--forest-deep); color: var(--cream) !important; }
+.site-nav .nav-cta:hover { color: var(--forest) !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--ochre); }
 
 /* ----- Desktop nav (>= 56rem) ----- */
 @media (min-width: 56rem) {
@@ -295,7 +295,7 @@ p:last-child { margin-bottom: 0; }
     min-width: 0;
   }
   .site-nav .nav-list a { padding: 0; display: inline; }
-  .site-nav .nav-cta { padding: 0.55rem 2.8rem; margin-top: 0; }
+  .site-nav .nav-cta { padding: 0; margin-top: 0; }
 }
 
 /* -------------------- Hero -------------------- */
