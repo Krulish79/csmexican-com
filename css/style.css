@@ -187,12 +187,15 @@ p:last-child { margin-bottom: 0; }
 }
 .btn-primary {
   background: var(--forest); color: var(--cream);
-}
-.btn-primary:hover { background: var(--forest-deep); text-decoration: none; }
-.btn-ghost {
-  background: transparent; color: var(--forest);
   border-color: var(--forest);
 }
+/* On hover: fade to Paper White with forest type — inverse of default */
+.btn-primary:hover { background: var(--paper); color: var(--forest); text-decoration: none; }
+.btn-ghost {
+  background: var(--paper); color: var(--forest);
+  border-color: var(--forest);
+}
+/* On hover: fade to forest fill — the opposite of btn-primary's hover */
 .btn-ghost:hover { background: var(--forest); color: var(--cream); text-decoration: none; }
 
 /* -------------------- Header -------------------- */
