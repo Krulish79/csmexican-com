@@ -338,7 +338,7 @@ p:last-child { margin-bottom: 0; }
 .hero-bg.has-photo::before {
   content: '';
   position: absolute; inset: 0;
-  background: rgba(250, 246, 236, 0.75);
+  background: rgba(250, 246, 236, 0.85);
   z-index: 1;
   pointer-events: none;
 }
@@ -434,10 +434,15 @@ p:last-child { margin-bottom: 0; }
   column-gap: 1.5rem;
   row-gap: 0.3rem;
   align-items: baseline;
-  border-top: var(--rule);
-  padding: 1.5rem 0 0.5rem;
+  /* Card treatment — matches Capabilities cards for visual consistency */
+  background: var(--white);
+  border: var(--rule);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem 1.5rem;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
-.process-steps > li:first-child { border-top: 0; padding-top: 0.5rem; }
+.process-steps > li:hover { transform: translateY(-2px); box-shadow: 0 8px 30px -18px rgba(31, 77, 58, 0.35); }
+.process-steps > li:first-child { padding-top: 1.4rem; }
 .step-num {
   grid-area: num;
   align-self: start;
