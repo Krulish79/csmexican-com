@@ -20,11 +20,9 @@ sólo Adriana puede aportar antes de publicar.
 
 - **Correo público en el sitio:** `sales@csmexican.com` ✓
   (Adriana lo crea mañana — el sitio ya lo muestra)
-- [ ] **Dirección a publicar** (¿calle / colonia, o sólo "CDMX"?)
-- [ ] **Teléfono** (opcional — ¿se quiere mostrar?)
+- ~~**Dirección a publicar**~~ ✓ Resuelto — 1ra Cerrada de Galeana No. 11, San Ángel Inn, Álvaro Obregón, 01000, CDMX
+- ~~**Teléfono**~~ ✓ Resuelto — +52 (55) 5295.1574
 - [ ] **LinkedIn / redes sociales** (opcional — íconos en footer)
-
-> Pendiente: lo agregamos cuando Adriana decida qué publicar.
 
 ---
 
