@@ -198,6 +198,39 @@ p:last-child { margin-bottom: 0; }
 /* On hover: fade to forest fill — the opposite of btn-primary's hover */
 .btn-ghost:hover { background: var(--forest); color: var(--cream); text-decoration: none; }
 
+/* -------------------- Language bar (top strip of header) -------------------- */
+.lang-bar {
+  border-bottom: 1px solid rgba(31, 77, 58, 0.08);
+  background: rgba(31, 77, 58, 0.04);
+  padding: 0.4rem 0;
+}
+.lang-bar .container {
+  display: flex;
+  justify-content: flex-end;
+}
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.lang-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.15rem 0.1rem;
+  transition: color 160ms ease;
+}
+.lang-link:hover { color: var(--ochre); text-decoration: none; }
+.lang-link.is-active {
+  color: var(--ochre);
+  font-weight: 500;
+}
+.lang-link.is-active:hover { color: var(--ochre); text-decoration: none; cursor: default; }
+.lang-sep { color: var(--muted); opacity: 0.5; }
+
 /* -------------------- Header -------------------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;

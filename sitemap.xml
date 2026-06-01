@@ -1,55 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Sitemap — CSM
-  Domain pending Adriana. Once the final URL is confirmed, find/replace
-  "https://csmexican.com" across this file (and robots.txt + index.html canonical).
-  Date below is launch placeholder — bump on each meaningful content update.
+  Sitemap — CSM (bilingual)
+  ENG: https://csmexican.com/
+  ESP: https://csmexican.com/es/
+  hreflang annotations help search engines serve the right language.
 -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- English homepage -->
   <url>
     <loc>https://csmexican.com/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://csmexican.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://csmexican.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://csmexican.com/"/>
   </url>
 
-  <!-- Anchored sections of the single-page site. Search engines treat
-       these as fragment URLs of the homepage — useful for sitelinks. -->
+  <!-- Spanish homepage -->
   <url>
-    <loc>https://csmexican.com/#about</loc>
+    <loc>https://csmexican.com/es/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://csmexican.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://csmexican.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://csmexican.com/"/>
   </url>
-  <url>
-    <loc>https://csmexican.com/#capabilities</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://csmexican.com/#process</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://csmexican.com/#products</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://csmexican.com/#why-mexico</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://csmexican.com/#trust</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://csmexican.com/#contact</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- Anchored sections (ENG) -->
+  <url><loc>https://csmexican.com/#about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://csmexican.com/#capabilities</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://csmexican.com/#process</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://csmexican.com/#products</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://csmexican.com/#why-mexico</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://csmexican.com/#trust</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://csmexican.com/#contact</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
 
 </urlset>

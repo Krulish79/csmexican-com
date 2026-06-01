@@ -14,11 +14,10 @@
   <!-- Canonical — csmexican.com (owned) -->
   <link rel="canonical" href="https://csmexican.com/">
 
-  <!-- Future Spanish version — uncomment when launched
+  <!-- Language alternates — Spanish version at /es/ -->
   <link rel="alternate" hreflang="en" href="https://csmexican.com/">
   <link rel="alternate" hreflang="es" href="https://csmexican.com/es/">
   <link rel="alternate" hreflang="x-default" href="https://csmexican.com/">
-  -->
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -27,6 +26,7 @@
   <meta property="og:description" content="Premium Mexican co-manufacturing for international food brands. Hot sauces, dressings, spreads, condiments. FSSC 22000 certified since 2016.">
   <meta property="og:url" content="https://csmexican.com/">
   <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_MX">
   <meta property="og:image" content="images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -94,6 +94,17 @@
        HEADER
        ================================================================= -->
   <header class="site-header" id="top">
+    <!-- Language toggle bar (top of header) -->
+    <div class="lang-bar">
+      <div class="container">
+        <nav class="lang-switch" aria-label="Language">
+          <a href="/" class="lang-link is-active" aria-current="true">ENG</a>
+          <span class="lang-sep" aria-hidden="true">·</span>
+          <a href="/es/" class="lang-link">ESP</a>
+        </nav>
+      </div>
+    </div>
+
     <div class="container header-inner">
       <a class="logo" href="#top" aria-label="CSM — Conservando el Sabor Mexicano">
         <img src="images/logo/csm-compacto.svg" alt="CSM">
