@@ -427,7 +427,11 @@ p:last-child { margin-bottom: 0; }
 }
 @media (min-width: 36rem) { .stats { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 56rem) { .stats { grid-template-columns: repeat(4, 1fr); gap: 1rem; } }
-.stats > div { border-top: var(--rule); padding-top: 0.75rem; }
+.stats > div {
+  border-top: var(--rule);
+  padding-top: 0.75rem;
+  text-align: center;
+}
 .stats dt {
   font-family: var(--font-display);
   font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
