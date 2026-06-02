@@ -4,9 +4,9 @@
   <defs>
     <style>
       .bg { fill: #FAF6EC; }
-      .forest { fill: #1f4d3a; }
-      .stem   { fill: none; stroke: #1f4d3a; stroke-miterlimit: 10; stroke-width: 2.4px; }
-      .ochre  { fill: #b78700; }
+      .forest { fill: #218455; }
+      .stem   { fill: none; stroke: #218455; stroke-miterlimit: 10; stroke-width: 2.4px; }
+      .ochre  { fill: #87888a; }
     </style>
   </defs>
   <!-- Paper White tile background -->
