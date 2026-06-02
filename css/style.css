@@ -67,10 +67,10 @@ p {
 /* Label-type paragraphs stay left-aligned (justifying them looks odd) */
 .eyebrow,
 .form-note,
-.footer-copy,
-.clients-lead {
+.footer-copy {
   text-align: left;
 }
+/* .clients-lead overrides this to center — handled later in the clients block */
 p:last-child { margin-bottom: 0; }
 
 /* Hide elements only for screen readers */
@@ -113,7 +113,10 @@ p:last-child { margin-bottom: 0; }
   color: var(--ink);
   opacity: 0.78;
   max-width: 38rem;
+  text-wrap: pretty;  /* no orphan word alone on last line */
 }
+/* Avoid single-word orphans on hero sub + body paragraphs too */
+.hero-sub, p.body-copy, .section p { text-wrap: pretty; }
 
 /* Two-column responsive layout */
 .two-col {
@@ -513,9 +516,19 @@ p:last-child { margin-bottom: 0; }
 .section-why-mexico { background: var(--cream-deep); }
 .why-mexico-foot {
   margin-top: 2.5rem; padding-top: 2rem;
-  border-top: var(--rule);
-  max-width: 48rem;
   font-size: 1rem; line-height: 1.6; color: var(--ink); opacity: 0.85;
+  position: relative;
+}
+/* Full-bleed rule that extends edge-to-edge across the page */
+.why-mexico-foot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: rgba(31, 77, 58, 0.18);
 }
 .why-mexico-foot strong { color: var(--forest); font-weight: 600; }
 
@@ -548,12 +561,14 @@ p:last-child { margin-bottom: 0; }
 .clients {
   border-top: var(--rule);
   padding-top: 2.5rem;
+  text-align: center;
 }
 .clients-lead {
   font-family: var(--font-display);
   font-size: 0.85rem; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--ochre);
   margin: 0 0 1.5rem;
+  text-align: center;
 }
 /* Typographic client list — written-out brand names, no logos */
 .client-names {
@@ -562,6 +577,7 @@ p:last-child { margin-bottom: 0; }
   display: flex; flex-wrap: wrap;
   gap: 0.5rem 1.4rem;
   align-items: baseline;
+  justify-content: center;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(1.05rem, 1.6vw, 1.35rem);
