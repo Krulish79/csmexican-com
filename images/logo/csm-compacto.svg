@@ -5,13 +5,13 @@
     <style>
       .st0 {
         fill: none;
-        stroke: #218455;
+        stroke: #1F4D3A;
         stroke-miterlimit: 10;
         stroke-width: 2px;
       }
 
       .st1 {
-        fill: #87888a;
+        fill: #B78700;
       }
 
       .st2 {
@@ -19,7 +19,7 @@
       }
 
       .st3 {
-        fill: #218455;
+        fill: #1F4D3A;
       }
     </style>
   </defs>
