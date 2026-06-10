@@ -110,58 +110,55 @@
   }
 
   // ---------- Contact form ----------
-  // Behavior (auto-detects state — no code change needed when launched):
-  //
-  //   1. If action="#" (current pre-launch state)
-  //        → prevent submission, show friendly note
-  //
-  //   2. If action="https://formspree.io/f/XXX" (Path A — Formspree)
-  //        → submit via fetch, show success/error inline (no page jump)
-  //
-  //   3. If the form has the `netlify` attribute (Path B — Netlify Forms)
-  //        → let Netlify's default POST handle it; show "Sending…" while
-  //          it's in flight
-  //
-  // The honeypot field (`bot-field`) is ignored client-side; for Formspree
-  // it just becomes a harmless extra field, for Netlify it's required by
-  // their spam filter.
+  // Submissions go to FormSubmit.co's AJAX endpoint (action attribute).
+  // FormSubmit emails the form to sales@csmexican.com — free, no signup
+  // required, no monthly limits. First-time submission triggers an
+  // activation email Adriana clicks once; after that, all messages flow.
 
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
   const note = form.querySelector('.form-note');
   const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn ? submitBtn.textContent : '';
+  const isSpanish = document.documentElement.lang === 'es';
+
+  const COPY = isSpanish ? {
+    sending: 'Enviando tu mensaje…',
+    success: 'Gracias — recibimos tu mensaje y te responderemos en un máximo de 2 días hábiles.',
+    error:   'Algo salió mal. Por favor escríbenos directamente a sales@csmexican.com.',
+  } : {
+    sending: 'Sending your message…',
+    success: 'Thanks — we received your message and will be in touch within 2 business days.',
+    error:   'Something went wrong. Please email us directly at sales@csmexican.com.',
+  };
+
   const setNote = (text, color) => {
     if (!note) return;
     note.textContent = text;
     if (color) note.style.color = color;
   };
 
-  const isPlaceholder = form.getAttribute('action') === '#'
-    && !form.hasAttribute('netlify');
-  const isFormspree = /formspree\.io/.test(form.getAttribute('action') || '');
-  const isNetlify = form.hasAttribute('netlify');
+  const isFormSubmit = /formsubmit\.co/.test(form.getAttribute('action') || '');
+  const isPlaceholder = form.getAttribute('action') === '#';
 
   if (isPlaceholder) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      setNote(
-        'Form not connected yet — provide a destination email to enable submissions.',
-        '#1F4D3A'
-      );
+      setNote('Form not connected yet.', '#1F4D3A');
     });
     return;
   }
 
-  if (isFormspree) {
+  if (isFormSubmit) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       // Honeypot — silently drop if bot filled it
-      if (form.querySelector('input[name="bot-field"]')?.value) return;
+      if (form.querySelector('input[name="_honey"]')?.value) return;
 
-      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
-      setNote('Sending your message…', '#1F4D3A');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '…'; }
+      setNote(COPY.sending, '#1F4D3A');
 
       try {
         const res = await fetch(form.action, {
@@ -171,24 +168,15 @@
         });
         if (res.ok) {
           form.reset();
-          setNote('Thanks — we received your message and will be in touch within 2 business days.', '#1F4D3A');
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send message'; }
+          setNote(COPY.success, '#1F4D3A');
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
         } else {
           throw new Error('Bad response');
         }
       } catch (err) {
-        setNote('Something went wrong. Please email us directly at sales@csmexican.com.', '#A03A3A');
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send message'; }
+        setNote(COPY.error, '#A03A3A');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
       }
-    });
-    return;
-  }
-
-  if (isNetlify) {
-    // Let Netlify's native POST happen — we only enhance UX
-    form.addEventListener('submit', () => {
-      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
-      setNote('Sending your message…', '#1F4D3A');
     });
   }
 })();

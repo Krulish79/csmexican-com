@@ -459,10 +459,15 @@
           The honeypot field (`bot-field`) is harmless for Formspree (ignored)
           and required for Netlify spam protection — leaving it in works for both.
         -->
-        <form class="contact-form" action="#" method="post" data-pending-form-destination>
+        <form class="contact-form" action="https://formsubmit.co/ajax/sales@csmexican.com" method="post">
+          <!-- FormSubmit config (hidden) -->
+          <input type="hidden" name="_subject" value="New contact form submission — csmexican.com">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+
           <!-- Honeypot — bots fill this; real users don't see it -->
           <p class="hp-field" aria-hidden="true">
-            <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+            <label>Don't fill this out if you're human: <input name="_honey" tabindex="-1" autocomplete="off"></label>
           </p>
 
           <label>
