@@ -570,6 +570,24 @@ p:last-child { margin-bottom: 0; }
   margin: 0 0 1.5rem;
   text-align: center;
 }
+/* Claim statement — replaces the old client list */
+.clients-claim {
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--forest);
+  max-width: 48rem;
+  margin: 0 auto;
+  text-wrap: pretty;
+}
+.clients-claim strong {
+  color: var(--ochre);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* Typographic client list — written-out brand names, no logos */
 .client-names {
   list-style: none;
