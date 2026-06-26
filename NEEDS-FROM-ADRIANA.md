@@ -26,23 +26,21 @@ sólo Adriana puede aportar antes de publicar.
 
 ---
 
-## 3. Correo destino del formulario
+## 3. Correo destino del formulario — ✓ Resuelto
 
-El formulario **ya está pre-armado** para los dos caminos más comunes
-(Formspree o Netlify Forms). El JS detecta automáticamente cuál se
-está usando — sólo hace falta **un cambio de URL** para activarlo.
+El formulario está conectado a **FormSubmit.co** (100% gratis,
+sin límites mensuales, sin signup). Los mensajes llegan a
+`sales@csmexican.com`.
 
-- **Correo donde deben llegar los leads:** `sales@csmexican.com` ✓
-- [ ] **Decisión de mecanismo:**
-  - Servicio sencillo tipo **Formspree** (ideal para sitios estáticos
-    en GitHub Pages, ~$5–10 USD/mes) — **recomendado**
-  - O **webhook** si tiene un backend propio
+**Paso único pendiente para Adriana:** cuando llegue el primer
+mensaje al buzón, FormSubmit le mandará un correo de confirmación
+con un link. **Tiene que dar clic una sola vez** para activar la
+recepción. A partir de ahí, todos los mensajes del formulario
+fluyen automáticamente al inbox para siempre.
 
-> Como vamos con GitHub Pages, **Formspree es la opción más directa**.
-> Netlify Forms sólo aplicaría si cambiáramos a Netlify de hosting.
-
-Detalles de cómo activarlo están comentados directamente en el HTML,
-junto al `<form>` — son ~30 segundos cuando llegue la decisión.
+- Asunto del correo: *"New contact form submission — csmexican.com"*
+- Reply-To: el correo de quien escribe (responde con un Reply directo)
+- Spam guard: habilitado (FormSubmit captcha)
 
 ---
 
@@ -100,11 +98,13 @@ Una vez tengamos las fotos las droppeo en `images/sections/`.
 - ~~Optimizar SEO~~ ✓ Listo — `sitemap.xml`, `robots.txt`, Open Graph
   + Twitter Card, JSON-LD Organization schema, OG image (1200×630),
   apple-touch-icon, canonical, hreflang scaffold.
-- ~~Pre-stage del formulario~~ ✓ Listo — sólo falta el endpoint de Formspree.
-- ~~Sección de clientes~~ ✓ Listo — texto en lugar de logos.
-- ~~Scaffold para GitHub Pages~~ ✓ Listo — `.nojekyll`, `.gitignore`, README con
-  instrucciones de DNS para cuando se compre el dominio.
-- Construir versión en español si quiere (cotización aparte: +$1,500 MXN)
+- ~~Pre-stage del formulario~~ ✓ Conectado a FormSubmit.co — los mensajes
+  llegan a `sales@csmexican.com`. Sólo falta el clic de activación de Adriana
+  en el primer correo de confirmación.
+- ~~Sección de clientes~~ ✓ Reemplazada por un claim con presencia en
+  +18,000 puntos de venta.
+- ~~Scaffold para GitHub Pages~~ ✓ Listo y desplegado en csmexican.com.
+- ~~Versión en español~~ ✓ Lista en `/es/` con toggle ENG · ESP en el header.
 
 ---
 
